@@ -1,6 +1,6 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import type { DesignSection, SystemDesign, SystemDesignSummary } from '@sda/shared';
+import type { DesignSection, SystemDesign, SystemDesignSummary } from '../shared';
 import {
   Accordion,
   AccordionDetails,
@@ -29,7 +29,7 @@ import { SequenceSection } from '../components/design/SequenceSection';
 import { Markdown } from '../components/markdown/Markdown';
 import { TableOfContents } from '../components/TableOfContents';
 import { usePreferences } from '../context/PreferencesContext';
-import { HttpError, api } from '../data/api';
+import { NotFoundError, api } from '../data/api';
 import { useAsync } from '../data/hooks';
 import NotFoundPage from './NotFoundPage';
 
@@ -40,7 +40,7 @@ export default function SystemDesignPage() {
   const design = useAsync(() => api.getDesign(slug), [slug]);
   const all = useAsync(() => api.listDesigns(), []);
 
-  if (design.error instanceof HttpError && design.error.status === 404) return <NotFoundPage what="system design" />;
+  if (design.error instanceof NotFoundError) return <NotFoundPage what="system design" />;
   return (
     <Container maxWidth="xl" sx={{ py: { xs: 3, md: 4 } }}>
       <Box sx={{ display: 'grid', gap: 4, gridTemplateColumns: { xs: '1fr', md: 'minmax(0,1fr) 220px', lg: '220px minmax(0,1fr) 220px' } }}>

@@ -1,4 +1,4 @@
-import type { DiagramNode } from '@sda/shared';
+import type { DiagramNode } from '../../shared';
 import { Box, Typography, alpha, useTheme } from '@mui/material';
 import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 import { memo } from 'react';

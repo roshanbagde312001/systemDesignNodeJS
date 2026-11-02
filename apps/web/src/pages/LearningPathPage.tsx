@@ -3,12 +3,12 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HubOutlinedIcon from '@mui/icons-material/HubOutlined';
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
-import type { LearningPathStep } from '@sda/shared';
+import type { LearningPathStep } from '../shared';
 import { Box, Breadcrumbs, Button, Container, IconButton, LinearProgress, Link, Paper, Stack, Tooltip, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import { DifficultyChip, ErrorState, PageLoading, Seo } from '../components/common';
-import { HttpError, api } from '../data/api';
+import { NotFoundError, api } from '../data/api';
 import { useAsync } from '../data/hooks';
 import NotFoundPage from './NotFoundPage';
 
@@ -45,7 +45,7 @@ export default function LearningPathPage() {
   const path = useAsync(() => api.getLearningPath(slug), [slug]);
   const [done, toggle] = useProgress(slug);
 
-  if (path.error instanceof HttpError && path.error.status === 404) return <NotFoundPage what="learning path" />;
+  if (path.error instanceof NotFoundError) return <NotFoundPage what="learning path" />;
   if (path.error) return <Container sx={{ py: 5 }}><ErrorState error={path.error} onRetry={path.reload} /></Container>;
   if (!path.data) return <Container sx={{ py: 5 }}><PageLoading /></Container>;
   const p = path.data;

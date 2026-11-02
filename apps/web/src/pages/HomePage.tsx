@@ -1,8 +1,8 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import { simulatorDiagramCompact } from '@sda/content/src/playground';
-import type { ArticleSummary, Category } from '@sda/shared';
+import { simulatorDiagramCompact } from '../content/playground';
+import type { ArticleSummary, Category } from '../shared';
 import {
   Box,
   Button,

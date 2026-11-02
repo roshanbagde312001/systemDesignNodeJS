@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
-import { contentSource } from './api';
+import { useCallback, useEffect, useState } from 'react';
 
 export interface AsyncState<T> {
   data: T | undefined;
@@ -28,8 +27,4 @@ export function useAsync<T>(loader: () => Promise<T>, deps: unknown[]): AsyncSta
 
   const reload = useCallback(() => setNonce((n) => n + 1), []);
   return { ...state, reload } as AsyncState<T>;
-}
-
-export function useContentSource() {
-  return useSyncExternalStore(contentSource.subscribe, contentSource.get, contentSource.get);
 }

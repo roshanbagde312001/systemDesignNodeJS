@@ -1,4 +1,4 @@
-import type { Diagram } from '@sda/shared';
+import type { Diagram } from '../../shared';
 import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { useState } from 'react';
 import { SequenceDiagram } from '../diagram/SequenceDiagram';

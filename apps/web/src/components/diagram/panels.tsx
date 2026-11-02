@@ -1,5 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
-import type { DiagramNode, FlowStep, NodeKind } from '@sda/shared';
+import type { DiagramNode, FlowStep, NodeKind } from '../../shared';
 import { Box, Chip, Divider, Drawer, IconButton, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { useState, type ReactNode } from 'react';
 import { usePreferences } from '../../context/PreferencesContext';

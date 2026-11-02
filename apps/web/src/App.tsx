@@ -3,7 +3,6 @@ import { lazy, useMemo, type ReactNode } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
-import { AuthProvider, RequireAdmin } from './context/AuthContext';
 import { PreferencesProvider, usePreferences } from './context/PreferencesContext';
 import { buildTheme } from './theme/theme';
 
@@ -21,13 +20,6 @@ const SearchPage = lazy(() => import('./pages/SearchPage'));
 const GlossaryPage = lazy(() => import('./pages/GlossaryPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
-const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage'));
-const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
-const AdminArticlesPage = lazy(() => import('./pages/admin/AdminArticlesPage'));
-const AdminArticleEditor = lazy(() => import('./pages/admin/AdminArticleEditor'));
-const AdminTaxonomyPage = lazy(() => import('./pages/admin/AdminTaxonomyPage'));
-const AdminDesignsPage = lazy(() => import('./pages/admin/AdminDesignsPage'));
-const AdminPathsPage = lazy(() => import('./pages/admin/AdminPathsPage'));
 
 function Themed({ children }: { children: ReactNode }) {
   const { colorMode } = usePreferences();
@@ -56,22 +48,6 @@ export function AppRoutes() {
         <Route path="search" element={<SearchPage />} />
         <Route path="glossary" element={<GlossaryPage />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path="admin/login" element={<AdminLoginPage />} />
-        <Route
-          path="admin"
-          element={
-            <RequireAdmin>
-              <AdminLayout />
-            </RequireAdmin>
-          }
-        >
-          <Route index element={<AdminArticlesPage />} />
-          <Route path="articles/new" element={<AdminArticleEditor />} />
-          <Route path="articles/:id" element={<AdminArticleEditor />} />
-          <Route path="taxonomy" element={<AdminTaxonomyPage />} />
-          <Route path="designs" element={<AdminDesignsPage />} />
-          <Route path="learning-paths" element={<AdminPathsPage />} />
-        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
@@ -83,7 +59,7 @@ export function Providers({ children }: { children: ReactNode }) {
     <HelmetProvider>
       <PreferencesProvider>
         <Themed>
-          <AuthProvider>{children}</AuthProvider>
+          {children}
         </Themed>
       </PreferencesProvider>
     </HelmetProvider>

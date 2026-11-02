@@ -1,4 +1,4 @@
-import type { Flow } from '@sda/shared';
+import type { Flow } from '../../shared';
 import { useCallback, useEffect, useState } from 'react';
 
 export const PLAYBACK_INTERVAL_MS = 2400;

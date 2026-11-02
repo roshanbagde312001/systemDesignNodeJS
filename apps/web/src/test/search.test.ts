@@ -1,5 +1,5 @@
-import { articles, systemDesigns } from '@sda/content';
-import { filterAndSort, scoreMatch } from '@sda/shared';
+import { articles, systemDesigns } from '../content';
+import { filterAndSort, scoreMatch } from '../shared';
 
 const published = systemDesigns.filter((d) => d.status === 'published');
 

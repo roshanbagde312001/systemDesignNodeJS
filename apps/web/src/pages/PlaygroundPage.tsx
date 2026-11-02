@@ -1,6 +1,6 @@
 import RouteIcon from '@mui/icons-material/Route';
 import SpeedIcon from '@mui/icons-material/Speed';
-import { playgroundConfigs, type PlaygroundConfig } from '@sda/content/src/playground';
+import { playgroundConfigs, type PlaygroundConfig } from '../content/playground';
 import {
   Alert,
   Box,

@@ -1,4 +1,4 @@
-import { slugify } from '@sda/shared';
+import { slugify } from '../../shared';
 import { Box, Link, Typography } from '@mui/material';
 import { Children, isValidElement, memo, type ReactNode } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';

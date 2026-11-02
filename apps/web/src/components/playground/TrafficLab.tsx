@@ -6,8 +6,8 @@ import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import type { PlaygroundConfig, TrafficScenario } from '@sda/content/src/playground';
-import type { DiagramNode } from '@sda/shared';
+import type { PlaygroundConfig, TrafficScenario } from '../../content/playground';
+import type { DiagramNode } from '../../shared';
 import {
   Alert,
   Box,

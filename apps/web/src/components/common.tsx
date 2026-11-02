@@ -1,7 +1,7 @@
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SearchOffIcon from '@mui/icons-material/SearchOff';
-import type { ArticleSummary, Difficulty, SystemDesignSummary } from '@sda/shared';
+import type { ArticleSummary, Difficulty, SystemDesignSummary } from '../shared';
 import {
   Alert,
   Box,

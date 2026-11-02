@@ -1,5 +1,5 @@
-import { plannedArticleTopics } from '@sda/content/src/designs/planned';
-import { filterAndSort } from '@sda/shared';
+import { plannedArticleTopics } from '../content/designs/planned';
+import { filterAndSort } from '../shared';
 import { Box, Button, Chip, Container, Stack, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import { ArticleCard, CardGridSkeleton, EmptyState, ErrorState, SectionHeader, Seo } from '../components/common';

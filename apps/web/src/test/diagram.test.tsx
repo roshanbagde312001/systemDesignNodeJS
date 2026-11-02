@@ -1,4 +1,4 @@
-import { urlShortener } from '@sda/content/src/designs/url-shortener';
+import { urlShortener } from '../content/designs/url-shortener';
 import { act, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ArchitectureViewer } from '../components/diagram/ArchitectureViewer';

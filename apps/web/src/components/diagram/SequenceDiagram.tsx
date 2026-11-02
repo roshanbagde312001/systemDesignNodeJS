@@ -1,4 +1,4 @@
-import type { DiagramNode, Flow } from '@sda/shared';
+import type { DiagramNode, Flow } from '../../shared';
 import { Box, useTheme } from '@mui/material';
 import { NODE_KIND_META } from './nodeKinds';
 

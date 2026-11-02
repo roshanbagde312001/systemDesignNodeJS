@@ -1,4 +1,4 @@
-import type { ApiEndpoint } from '@sda/shared';
+import type { ApiEndpoint } from '../../shared';
 import { Box, Chip, Paper, Stack, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 import { fontMono } from '../../theme/theme';
 import { CodeBlock } from '../markdown/CodeBlock';

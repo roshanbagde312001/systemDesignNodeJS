@@ -1,5 +1,5 @@
-import type { TrafficModel } from '@sda/content/src/playground';
-import type { Diagram, DiagramEdge } from '@sda/shared';
+import type { TrafficModel } from '../../content/playground';
+import type { Diagram, DiagramEdge } from '../../shared';
 
 /*
  * Educational traffic model. It is deliberately simple so beginners can reason about it:

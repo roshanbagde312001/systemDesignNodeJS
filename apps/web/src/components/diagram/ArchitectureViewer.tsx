@@ -7,7 +7,7 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import ViewTimelineIcon from '@mui/icons-material/ViewTimeline';
-import type { Diagram, DiagramEdge, DiagramNode } from '@sda/shared';
+import type { Diagram, DiagramEdge, DiagramNode } from '../../shared';
 import {
   Box,
   Chip,

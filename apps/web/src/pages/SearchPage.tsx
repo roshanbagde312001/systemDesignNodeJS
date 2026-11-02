@@ -1,4 +1,4 @@
-import { filterAndSort, type ArticleSummary, type SystemDesignSummary } from '@sda/shared';
+import { filterAndSort, type ArticleSummary, type SystemDesignSummary } from '../shared';
 import { Box, Button, Container, Tab, Tabs, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { ArticleCard, CardGridSkeleton, DesignCard, EmptyState, SectionHeader, Seo } from '../components/common';

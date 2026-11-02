@@ -3,13 +3,9 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
-COPY packages/shared/package.json packages/shared/
-COPY packages/content/package.json packages/content/
-COPY apps/api/package.json apps/api/
 COPY apps/web/package.json apps/web/
 RUN npm ci --workspace @sda/web --include-workspace-root --ignore-scripts
 COPY tsconfig.base.json ./
-COPY packages packages
 COPY apps/web apps/web
 ARG VITE_SITE_URL=http://localhost:8080
 ARG VITE_GITHUB_URL

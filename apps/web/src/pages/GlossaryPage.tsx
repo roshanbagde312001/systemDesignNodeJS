@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-import { glossary } from '@sda/content/src/glossary';
+import { glossary } from '../content/glossary';
 import { Box, Container, InputAdornment, Paper, TextField, Typography } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';

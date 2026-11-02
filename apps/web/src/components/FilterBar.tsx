@@ -1,5 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
-import { DIFFICULTIES, type Category, type Difficulty, type SearchFilters, type Searchable } from '@sda/shared';
+import { DIFFICULTIES, type Category, type Difficulty, type SearchFilters, type Searchable } from '../shared';
 import { Button, FormControl, InputAdornment, InputLabel, MenuItem, Select, Stack, TextField } from '@mui/material';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';

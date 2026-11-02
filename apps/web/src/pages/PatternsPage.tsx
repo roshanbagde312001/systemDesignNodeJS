@@ -1,6 +1,6 @@
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import DoNotDisturbOnOutlinedIcon from '@mui/icons-material/DoNotDisturbOnOutlined';
-import { architecturePatterns } from '@sda/content/src/patterns';
+import { architecturePatterns } from '../content/patterns';
 import { Box, Chip, Container, Link, Paper, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { Callout } from '../components/Callout';

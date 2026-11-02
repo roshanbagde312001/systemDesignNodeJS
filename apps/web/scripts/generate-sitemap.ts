@@ -4,7 +4,7 @@
  */
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { articles, learningPaths, systemDesigns } from '@sda/content';
+import { articles, learningPaths, systemDesigns } from '../src/content';
 
 const site = (process.env.VITE_SITE_URL ?? process.env.SITE_URL ?? 'https://systemdesign.academy').replace(/\/$/, '');
 const staticPaths = ['/', '/system-designs', '/concepts', '/patterns', '/playground', '/learning-paths', '/glossary', '/about'];

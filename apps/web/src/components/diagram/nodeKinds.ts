@@ -10,7 +10,7 @@ import PublicIcon from '@mui/icons-material/Public';
 import StorageIcon from '@mui/icons-material/Storage';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import ViewStreamIcon from '@mui/icons-material/ViewStream';
-import type { NodeKind } from '@sda/shared';
+import type { NodeKind } from '../../shared';
 
 export const NODE_KIND_META: Record<NodeKind, { label: string; color: string; Icon: typeof BoltIcon; simple: string }> = {
   client: { label: 'Client', color: '#64748b', Icon: DevicesIcon, simple: 'The user’s browser or app' },

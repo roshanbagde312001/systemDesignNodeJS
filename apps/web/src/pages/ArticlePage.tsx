@@ -1,4 +1,4 @@
-import type { Article, ArticleSummary } from '@sda/shared';
+import type { Article, ArticleSummary } from '../shared';
 import { Box, Breadcrumbs, Button, Chip, Container, Link, Paper, Stack, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { ArticleCard, DifficultyChip, ErrorState, PageLoading, ReadingModeToggle
 import { extractHeadings, Markdown } from '../components/markdown/Markdown';
 import { TableOfContents } from '../components/TableOfContents';
 import { usePreferences } from '../context/PreferencesContext';
-import { HttpError, api } from '../data/api';
+import { NotFoundError, api } from '../data/api';
 import { useAsync } from '../data/hooks';
 import NotFoundPage from './NotFoundPage';
 
@@ -16,7 +16,7 @@ export default function ArticlePage() {
   const article = useAsync(() => api.getArticle(slug), [slug]);
   const all = useAsync(() => api.listArticles(), []);
 
-  if (article.error instanceof HttpError && article.error.status === 404) return <NotFoundPage what="article" />;
+  if (article.error instanceof NotFoundError) return <NotFoundPage what="article" />;
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 4 } }}>
       {article.error && <ErrorState error={article.error} onRetry={article.reload} />}

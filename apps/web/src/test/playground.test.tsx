@@ -1,4 +1,4 @@
-import { playgroundConfigs } from '@sda/content/src/playground';
+import { playgroundConfigs } from '../content/playground';
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { simulate } from '../components/playground/simulate';

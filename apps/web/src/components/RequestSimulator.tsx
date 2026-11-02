@@ -1,5 +1,5 @@
-import { simulatorDiagram } from '@sda/content/src/playground';
-import type { Diagram } from '@sda/shared';
+import { simulatorDiagram } from '../content/playground';
+import type { Diagram } from '../shared';
 import { Alert, Box, Paper, Stack, Table, TableBody, TableCell, TableHead, TableRow, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { ArchitectureViewer } from './diagram/ArchitectureViewer';

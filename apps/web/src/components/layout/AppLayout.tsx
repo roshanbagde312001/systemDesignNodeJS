@@ -24,7 +24,6 @@ import {
 import { Suspense, useEffect, useState } from 'react';
 import { Link as RouterLink, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { usePreferences } from '../../context/PreferencesContext';
-import { useContentSource } from '../../data/hooks';
 import { PageLoading } from '../common';
 import { SearchDialog } from './SearchDialog';
 
@@ -167,7 +166,6 @@ export function AppLayout() {
 }
 
 function Footer() {
-  const source = useContentSource();
   const links = [
     { label: 'About', to: '/about' },
     { label: 'Glossary', to: '/glossary' },
@@ -213,14 +211,9 @@ function Footer() {
           </Stack>
         </Stack>
         <Divider sx={{ my: 3 }} />
-        <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={1}>
-          <Typography variant="caption" color="text.secondary">
-            © {new Date().getFullYear()} System Design Academy
-          </Typography>
-          <Typography variant="caption" color="text.secondary" data-testid="content-source">
-            Content source: {source === 'api' ? 'live API' : source === 'bundled' ? 'bundled content (API offline)' : '…'}
-          </Typography>
-        </Stack>
+        <Typography variant="caption" color="text.secondary">
+          © {new Date().getFullYear()} System Design Academy
+        </Typography>
       </Container>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { filterAndSort } from '@sda/shared';
+import { filterAndSort } from '../shared';
 import { Box, Button, Container, Typography } from '@mui/material';
 import { useMemo } from 'react';
 import { CardGridSkeleton, DesignCard, EmptyState, ErrorState, SectionHeader, Seo } from '../components/common';

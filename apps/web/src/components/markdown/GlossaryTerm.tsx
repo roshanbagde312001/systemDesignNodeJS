@@ -1,4 +1,4 @@
-import { glossary } from '@sda/content/src/glossary';
+import { glossary } from '../../content/glossary';
 import { Box, Link, Tooltip, Typography } from '@mui/material';
 import type { ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
