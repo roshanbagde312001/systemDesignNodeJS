@@ -1,0 +1,57 @@
+# Full stack: MongoDB + API + web (Nginx). Usage:
+#   cp .env.example .env   # then edit secrets
+#   docker compose up -d --build
+#   docker compose run --rm api node dist/seed.js   # seed content + admin user
+#   open http://localhost:8080
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    # Exposed on localhost only, for local development (`npm run dev:api`).
+    ports:
+      - "127.0.0.1:${MONGO_PORT:-27017}:27017"
+
+  api:
+    build:
+      context: .
+      dockerfile: deploy/api.Dockerfile
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      MONGODB_URI: mongodb://mongo:27017/system-design-academy
+      CORS_ORIGINS: ${PUBLIC_URL:-http://localhost:8080}
+      TRUST_PROXY: 1
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?Set JWT_ACCESS_SECRET in .env}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_NAME: ${ADMIN_NAME:-Site Admin}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+      args:
+        VITE_SITE_URL: ${PUBLIC_URL:-http://localhost:8080}
+        VITE_GITHUB_URL: ${VITE_GITHUB_URL:-}
+        VITE_LINKEDIN_URL: ${VITE_LINKEDIN_URL:-}
+        VITE_CONTACT_EMAIL: ${VITE_CONTACT_EMAIL:-}
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "${WEB_PORT:-8080}:80"
+
+volumes:
+  mongo-data:

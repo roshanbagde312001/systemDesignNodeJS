@@ -1,0 +1,21 @@
+{
+  "name": "system-design-academy",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interactive platform for learning system design and backend engineering, explained simply.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @sda/web",
+    "dev:api": "npm run dev -w @sda/api",
+    "build": "npm run build -w @sda/web && npm run build -w @sda/api",
+    "test": "npm run test -w @sda/web && npm run test -w @sda/api",
+    "typecheck": "npm run typecheck -w @sda/web && npm run typecheck -w @sda/api",
+    "seed": "npm run seed -w @sda/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

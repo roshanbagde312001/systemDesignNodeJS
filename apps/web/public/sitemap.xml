@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://systemdesign.academy/</loc></url>
+  <url><loc>https://systemdesign.academy/system-designs</loc></url>
+  <url><loc>https://systemdesign.academy/concepts</loc></url>
+  <url><loc>https://systemdesign.academy/patterns</loc></url>
+  <url><loc>https://systemdesign.academy/playground</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths</loc></url>
+  <url><loc>https://systemdesign.academy/glossary</loc></url>
+  <url><loc>https://systemdesign.academy/about</loc></url>
+  <url><loc>https://systemdesign.academy/system-design/url-shortener</loc><lastmod>2026-09-02</lastmod></url>
+  <url><loc>https://systemdesign.academy/system-design/messaging-system</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://systemdesign.academy/system-design/ecommerce-orders</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/nodejs-event-loop</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/redis-caching</loc><lastmod>2026-08-20</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/rate-limiting-algorithms</loc><lastmod>2026-09-08</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/database-indexing</loc><lastmod>2026-09-15</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/cap-theorem</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/horizontal-vs-vertical-scaling</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/message-queues-kafka</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://systemdesign.academy/concepts/circuit-breakers</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://systemdesign.academy/learning-paths/start-from-zero</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths/system-design-fundamentals</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths/backend-to-system-designer</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths/distributed-systems</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths/production-nodejs</loc></url>
+  <url><loc>https://systemdesign.academy/learning-paths/interview-prep</loc></url>
+</urlset>
